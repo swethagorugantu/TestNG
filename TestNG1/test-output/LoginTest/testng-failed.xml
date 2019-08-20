@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" guice-stage="DEVELOPMENT" name="Failed suite [LoginTest]" parallel="tests">
+  <parameter name="URL" value="google.com"/>
+  <listeners>
+    <listener class-name="test.Listeners"/>
+  </listeners>
+  <test thread-count="6" name="Test(failed)" parallel="classes">
+    <classes>
+      <class name="test.Test1">
+        <methods>
+          <include name="demo"/>
+          <include name="second"/>
+          <include name="dataTest" invocation-numbers="0 1 2"/>
+          <include name="assertFail"/>
+        </methods>
+      </class> <!-- test.Test1 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [LoginTest] -->

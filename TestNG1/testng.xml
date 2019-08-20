@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTest" parallel="tests" thread-count ="6">
+<parameter name="URL" value="google.com"/>
+<listeners>
+<listener class-name="test.Listeners"/>
+</listeners>
+  <test parallel="classes" thread-count="5" name="Test">
+    <classes>
+    <class name="test.Test1">
+    <methods>
+    <include name="demo"/>
+    <include name="Web.*"/>
+    <include name="get.*"/>
+    <include name="data.*"/>
+    <include name="assert.*"/>
+    </methods>
+      </class>
+    </classes>
+  </test> 
+  
+  <test name="Login">  
+  <classes>
+  <class name="test.Login">
+  <methods>
+  <exclude name="Mobile.*"/>
+  </methods>
+  </class>
+  </classes>  
+  </test>
+  
+  
+  
+  <!-- Test -->
+</suite> <!-- Suite -->
